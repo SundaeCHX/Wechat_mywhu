@@ -1,0 +1,18 @@
+import os
+import sae
+import web
+import sys
+from handle import Handle
+
+app_root=os.path.dirname(__file__)
+sys.path.insert(0,os.path.join(app_root,'sinastorage'))
+
+urls = (
+        '/weixin','Handle',
+)
+app_root = os.path.dirname(__file__)
+templates_root = os.path.join(app_root, 'templates')
+render = web.template.render(templates_root)
+
+app = web.application(urls, globals()).wsgifunc()
+application = sae.create_wsgi_app(app)
