@@ -1,5 +1,10 @@
 # Wechat_mywhu
-A wechat public platform ------ 在路上随风走
+A Wechat public platform ------ 在路上随风走
+A backup for SAE/mywhu
+
+If you want to set up a Wechat public platform for yourself, you can get some help at https://mp.weixin.qq.com/.
+
+You can clone this git and then upload it to the SAE. And you can learn how to set up the Wechat public platform from this project, but I hope you can implement your own functions.
 
 微信号：My_WHU
 
@@ -23,5 +28,3 @@ A wechat public platform ------ 在路上随风走
 17.有freestyle吗，输入“hp 词语”可查询相关的押韵词语，关键字：hp、Hp等。
 
 所有关键字都支持模糊匹配，比如动机院公告、武大动机、动机院等都是同一个关键字。
-                        
-剩下的都是我的个人功能就不告诉大家了哈~~~
