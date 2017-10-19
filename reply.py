@@ -1,14 +1,24 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# filename: reply.py
+# @Date    : 2017-10-19 19:32:08
+# @Author  : Sundae Chen (sundaechn@gmail.com)
+# @Link    : http://sundae.applinzi.com/home
+
+
 import time
 
+
 class Msg(object):
+
     def __init__(self):
         pass
+
     def send(self):
         return "success"
 
+
 class TextMsg(Msg):
+
     def __init__(self, toUserName, fromUserName, content):
         self.__dict = dict()
         self.__dict['ToUserName'] = toUserName
@@ -27,14 +37,17 @@ class TextMsg(Msg):
         </xml>
         """
         return XmlForm.format(**self.__dict)
-    
+
+
 class FormatMsg(Msg):
+
     def __init__(self, toUserName, fromUserName, media_id):
         self.__dict = dict()
         self.__dict['ToUserName'] = toUserName
         self.__dict['FromUserName'] = fromUserName
         self.__dict['CreateTime'] = int(time.time())
         self.__dict['MediaId'] = media_id
+
     def send(self):
         XmlForm = """
         <xml>
@@ -47,15 +60,18 @@ class FormatMsg(Msg):
 		</Voice>
 		</xml>
 		"""
-    	return XmlForm.format(**self.__dict)
-    
+        return XmlForm.format(**self.__dict)
+
+
 class ImageMsg(Msg):
+
     def __init__(self, toUserName, fromUserName, mediaId):
         self.__dict = dict()
         self.__dict['ToUserName'] = toUserName
         self.__dict['FromUserName'] = fromUserName
         self.__dict['CreateTime'] = int(time.time())
         self.__dict['MediaId'] = mediaId
+
     def send(self):
         XmlForm = """
         <xml>
@@ -69,17 +85,18 @@ class ImageMsg(Msg):
         </xml>
         """
         return XmlForm.format(**self.__dict)
-    
+
+
 class FmMsg(Msg):
+
     def __init__(self, toUserName, fromUserName):
         self.__dict = dict()
         self.__dict['ToUserName'] = toUserName
         self.__dict['FromUserName'] = fromUserName
         self.__dict['CreateTime'] = int(time.time())
 
-                
     def send(self):
-    	XmlForm = """
+        XmlForm = """
         <xml>
         <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
         <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
@@ -121,9 +138,11 @@ class FmMsg(Msg):
 		</xml>
         """
         return XmlForm.format(**self.__dict)
-    
+
+
 class QrMsg(Msg):
-    def __init__(self, toUserName, fromUserName ,url,qrurl):
+
+    def __init__(self, toUserName, fromUserName, url, qrurl):
         self.__dict = dict()
         self.__dict['ToUserName'] = toUserName
         self.__dict['FromUserName'] = fromUserName
@@ -131,9 +150,8 @@ class QrMsg(Msg):
         self.__dict['Url'] = url
         self.__dict['QrUrl'] = qrurl
 
-                
     def send(self):
-    	XmlForm = """
+        XmlForm = """
         <xml>
         <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
         <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
