@@ -4,7 +4,7 @@
 # @Author  : Sundae Chen (sundaechn@gmail.com)
 # @Link    : http://sundae.applinzi.com/home
 
-# coding=utf-8
+
 import requests
 import sys
 
